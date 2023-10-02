@@ -1,23 +1,62 @@
+import React from "react";
 import "./App.css";
-import Layout from "./components/layouts/Layout";
-import Home from "./pages/home/Home";
-import "./index.css";
-import { Col, Row } from "react-bootstrap";
+import Layout from "./components/Layout";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import About from "./pages/About";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Layout>
-        <Home />
-        <div className="container">
-          <Row>
-            <Col className="col-6 text-light pb-3">Products</Col>
-            <Col className="col-6 text-light">These are the products</Col>
-          </Row>
-        </div>
-      </Layout>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Layout>
+                <Home />
+              </Layout>
+            }
+          />
+          <Route
+            path="/shop"
+            element={
+              <Layout>
+                <Shop />
+              </Layout>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <Layout>
+                <About />
+              </Layout>
+            }
+          />
+          <Route
+            path="/blog"
+            element={
+              <Layout>
+                <Blog />
+              </Layout>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <Layout>
+                <Contact />
+              </Layout>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
-}
+};
 
 export default App;
