@@ -7,6 +7,8 @@ import Shop from "./pages/Shop";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import Account from "./pages/Account";
+import Cart from "./pages/Cart";
 
 const App = () => {
   return (
@@ -50,6 +52,22 @@ const App = () => {
             element={
               <Layout>
                 <Contact />
+              </Layout>
+            }
+          />
+          <Route
+            path="/account"
+            element={
+              <Layout>
+                <Account />
+              </Layout>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <Layout>
+                <Cart />
               </Layout>
             }
           />
