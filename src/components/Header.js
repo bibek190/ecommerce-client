@@ -8,11 +8,11 @@ import { MdAccountCircle } from "react-icons/md";
 const Header = () => {
   return (
     <>
-      <header className="header-top-strip p-1 shadow-sm">
+      <header className="header-top-strip  shadow-sm">
         <div className="container-xxl">
           <div className="row align-items-center">
-            <div className="col-6">
-              <p>This is the trending items</p>
+            <div className="col-6 ">
+              <p className="my-2">This is the trending items</p>
             </div>
             <div className="col-6 d-flex justify-content-between">
               <div>
