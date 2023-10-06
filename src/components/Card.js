@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const Card = () => {
   const [product, setProduct] = useState([]);
@@ -9,11 +10,9 @@ const Card = () => {
     try {
       const res = await fetch("https://fakestoreapi.com/products");
       const data = await res.json();
-      console.log(data);
       setProduct(data);
       setLoading(false);
     } catch (error) {
-      console.log(error);
       setLoading(false);
     }
     // console.log(data);
@@ -32,15 +31,17 @@ const Card = () => {
               className="card-img-top"
               src={item.image}
               alt="Card image cap"
+              height={"250px"}
             />
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+              <h5 className="card-title">{item.title}</h5>
+              <p>
+                <b>Price:$</b>
+                {item.price}
               </p>
+              <p className="card-text">{item.description}</p>
               <a href="#" className="btn btn-primary">
-                Go somewhere
+                Add to Cart <AiOutlineShoppingCart className="fs-3 mx-2" />
               </a>
             </div>
           </div>

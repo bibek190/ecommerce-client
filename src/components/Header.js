@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <>
       <header className="header-top-strip  shadow-sm">
-        <div className="container-xxl">
+        <div className="container">
           <div className="row align-items-center">
             <div className="col-6 ">
               <p className="my-2">This is the trending items</p>

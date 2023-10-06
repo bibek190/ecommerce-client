@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --primary: #00a97f;
   --light: rgba(133, 198, 218, 255);
@@ -99,7 +105,7 @@ footer {
 /* Home begins */
 .banner-details {
   background: url("/src/assets/images/home1.jpeg");
-  width: 100%;
+  width: 100vw;
   height: 60vh;
   background-position: center;
   background-size: cover;
@@ -116,3 +122,13 @@ footer {
 /* herodetails start */
 
 /* herodetails ends */
+/* Account start */
+/* Account ends */
+/* Signup start */
+
+.signup-image {
+  background: url(./assets/images/login.webp);
+  background-size: cover;
+  background-position: center;
+}
+/* Signup ends */

@@ -9,6 +9,8 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Account from "./pages/Account";
 import Cart from "./pages/Cart";
+import SignUp from "./pages/auth/SignUp";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
@@ -55,14 +57,8 @@ const App = () => {
               </Layout>
             }
           />
-          <Route
-            path="/account"
-            element={
-              <Layout>
-                <Account />
-              </Layout>
-            }
-          />
+          <Route path="/account" element={<Account />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route
             path="/cart"
             element={
