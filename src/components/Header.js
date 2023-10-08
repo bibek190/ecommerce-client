@@ -41,7 +41,7 @@ const Header = () => {
               </Link>
             </div>
             <div className="col-3 text-center m-auto d-flex align-items-center justify-content-center pt-2 ">
-              <div class="input-group mb-3 ">
+              <div className="input-group mb-3 ">
                 <span className="input-group-text" id="basic-addon1">
                   All
                 </span>

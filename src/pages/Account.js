@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Login from "../assets/images/login.webp";
 import Header from "../components/Header";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginClientUser } from "../redux/auth/userActions";
 
 const Account = () => {
   const [form, setForm] = useState({});
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -12,7 +16,14 @@ const Account = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(loginClientUser(form));
   };
+
+  // useEffect(() => {
+  //   if (user.uid) {
+  //     navigate("/");
+  //   }
+  // }, [user]);
 
   return (
     <>

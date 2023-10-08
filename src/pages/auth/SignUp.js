@@ -16,7 +16,7 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createNewClientUser(form));
-    navigate("/login");
+    navigate("/account");
   };
 
   return (

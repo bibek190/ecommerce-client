@@ -11,10 +11,12 @@ import Account from "./pages/Account";
 import Cart from "./pages/Cart";
 import SignUp from "./pages/auth/SignUp";
 import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
     <>
+      <ToastContainer />
       <BrowserRouter>
         <Routes>
           <Route
