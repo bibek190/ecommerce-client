@@ -12,6 +12,7 @@ import Cart from "./pages/Cart";
 import SignUp from "./pages/auth/SignUp";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
   return (
@@ -69,6 +70,7 @@ const App = () => {
               </Layout>
             }
           />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </>

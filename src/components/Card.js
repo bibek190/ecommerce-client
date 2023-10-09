@@ -24,9 +24,9 @@ const Card = () => {
 
   return (
     <div className="d-flex flex-row flex-wrap justify-content-between gap-5">
-      {product.map((item) => {
+      {product.map((item, i) => {
         return (
-          <div className="card" style={{ width: "18rem" }}>
+          <div className="card" style={{ width: "18rem" }} key={i}>
             <img
               className="card-img-top"
               src={item.image}

@@ -4,7 +4,8 @@ import {
 } from "firebase/auth";
 import { toast } from "react-toastify";
 import { auth, db } from "../../firebase-config";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { setUser } from "./userSlice";
 
 export const createNewClientUser = (userInfo) => async (dispatch) => {
   try {
@@ -15,11 +16,18 @@ export const createNewClientUser = (userInfo) => async (dispatch) => {
     );
     const { user } = await resPending;
     console.log(user);
+    // setDoc
+
+    const { fName, email, phone } = userInfo;
+    const data = { fName, email, phone };
+    await setDoc(doc(db, "Client", user.uid), data);
+
     toast.success("Succesfully created account..");
   } catch (e) {
     toast.error(e.message);
   }
 };
+// Login user
 
 export const loginClientUser =
   ({ email, password }) =>
@@ -32,16 +40,24 @@ export const loginClientUser =
       );
       toast.success("Logged Succesfully");
       const { user } = authSnapPromise;
-      console.log("user", user);
-      getUser(user);
+
+      // send firestore data to redux
+      dispatch(getUserInfo(user.uid));
     } catch (e) {
       toast.error(e.message);
     }
   };
 
-export const getUser = (info) => async (dispatch) => {
+// get data from firebase to redux
+
+export const getUserInfo = (uid) => async (dispatch) => {
   try {
-    const docRef = await setDoc(doc(db, "Client"), info);
+    const userSnap = await getDoc(doc(db, "Client", uid));
+
+    if (userSnap.exists()) {
+      const userData = userSnap.data();
+      dispatch(setUser({ ...userData, uid }));
+    }
   } catch (e) {
     toast.error(e.message);
   }

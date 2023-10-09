@@ -131,4 +131,18 @@ footer {
   background-size: cover;
   background-position: center;
 }
+
 /* Signup ends */
+/* sidebar starts */
+.sidebar {
+  background-color: rgb(40, 110, 168, 0.5);
+}
+.sidebar li {
+  cursor: pointer;
+  padding: 15px;
+}
+.sidebar li:hover {
+  background: rgb(43, 61, 76, 0.1);
+  border-radius: 10px;
+}
+/* sidebar ends */

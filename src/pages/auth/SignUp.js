@@ -22,9 +22,9 @@ const SignUp = () => {
   return (
     <>
       <Header />
-      <div className="container p-5 d-flex flex-column align-items-center justify-content-center form ">
-        <h3>Sign up </h3>
-        <div className="row w-75 border shadow rounded">
+      <div className=" container  d-flex flex-column align-items-center justify-content-center form ">
+        <h3 className="pt-4">Sign up </h3>
+        <div className="signin-page row w-50  border shadow rounded">
           <div className="col-6 signup-image"></div>
           <div className="col-6 w-50 ">
             <form
@@ -32,36 +32,49 @@ const SignUp = () => {
               onSubmit={handleSubmit}
             >
               <div className="form-group  ">
-                <label className="py-2">
-                  <h4>Email address</h4>
-                </label>
-                <input
-                  type="email"
-                  className="form-control fs-5"
-                  placeholder="Enter email"
-                  name="email"
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="form-group  ">
-                <label className="py-2">
-                  <h4>First Name</h4>
+                <label className="py-1">
+                  <h5>First Name</h5>
                 </label>
                 <input
                   type="text"
-                  className="form-control fs-5"
+                  className="form-control fs-6"
                   placeholder="Enter your name"
                   name="fName"
                   onChange={handleChange}
                 />
               </div>
+              <div className="form-group  ">
+                <label className="py-1">
+                  <h5>Email address</h5>
+                </label>
+                <input
+                  type="email"
+                  className="form-control fs-6"
+                  placeholder="Enter email"
+                  name="email"
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div className="form-group  ">
+                <label className="py-1">
+                  <h5>Phone</h5>
+                </label>
+                <input
+                  type="number"
+                  className="form-control fs-6"
+                  placeholder="+234567"
+                  name="phone"
+                  onChange={handleChange}
+                />
+              </div>
               <div className="form-group ">
-                <label>
-                  <h4 className="p-3">Create Password</h4>
+                <label className="py-1">
+                  <h5>Create Password</h5>
                 </label>
                 <input
                   type="password"
-                  className="form-control fs-5"
+                  className="form-control fs-6"
                   placeholder="Password"
                   name="password"
                   onChange={handleChange}
@@ -69,11 +82,11 @@ const SignUp = () => {
               </div>
               <div className="form-group ">
                 <label>
-                  <h4 className="p-3">Confirm Password</h4>
+                  <h5 className="p-1">Confirm Password</h5>
                 </label>
                 <input
                   type="password"
-                  className="form-control fs-5"
+                  className="form-control fs-6"
                   placeholder="Password"
                   name="confirmPassword"
                   onChange={handleChange}

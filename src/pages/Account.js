@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import Login from "../assets/images/login.webp";
 import Header from "../components/Header";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginClientUser } from "../redux/auth/userActions";
 
 const Account = () => {
   const [form, setForm] = useState({});
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = useSelector((state) => state.userInfo.user);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,11 +20,11 @@ const Account = () => {
     dispatch(loginClientUser(form));
   };
 
-  // useEffect(() => {
-  //   if (user.uid) {
-  //     navigate("/");
-  //   }
-  // }, [user]);
+  useEffect(() => {
+    if (user.uid) {
+      navigate("/dashboard");
+    }
+  }, [user, navigate]);
 
   return (
     <>
@@ -40,12 +41,12 @@ const Account = () => {
               onSubmit={handleSubmit}
             >
               <div className="form-group  ">
-                <label className="py-2">
-                  <h4>Email address</h4>
+                <label className="py-1">
+                  <h5>Email address</h5>
                 </label>
                 <input
                   type="email"
-                  className="form-control fs-5"
+                  className="form-control fs-6"
                   placeholder="Enter email"
                   name="email"
                   onChange={handleChange}
@@ -53,11 +54,11 @@ const Account = () => {
               </div>
               <div className="form-group ">
                 <label>
-                  <h4 className="p-3">Password</h4>
+                  <h5 className="p-1">Password</h5>
                 </label>
                 <input
                   type="password"
-                  className="form-control fs-5"
+                  className="form-control fs-6"
                   placeholder="Password"
                   name="password"
                   onChange={handleChange}
