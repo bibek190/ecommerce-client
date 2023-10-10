@@ -7,7 +7,7 @@ const UserLayout = ({ children }) => {
   return (
     <>
       <Header />
-      <div className="bg-info d-flex">
+      <div className="d-flex user-layout">
         <div className="p-3 w-25">
           <Sidebar />
         </div>

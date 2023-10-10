@@ -135,14 +135,32 @@ footer {
 /* Signup ends */
 /* sidebar starts */
 .sidebar {
-  background-color: rgb(40, 110, 168, 0.5);
+  background: linear-gradient(
+    rgb(50, 30, 30),
+    rgb(32, 32, 51),
+    rgb(59, 84, 109)
+  );
 }
 .sidebar li {
   cursor: pointer;
   padding: 15px;
 }
 .sidebar li:hover {
-  background: rgb(43, 61, 76, 0.1);
+  background: rgba(186, 202, 215, 0.2);
+
   border-radius: 10px;
 }
+.sidebar .links {
+  font-size: 20px;
+  color: #fff;
+}
 /* sidebar ends */
+/* user-layout starts */
+.user-layout {
+  background: linear-gradient(
+    rgb(77, 78, 80),
+    rgb(61, 61, 68),
+    rgb(87, 107, 143)
+  );
+}
+/* user-layout ends*/

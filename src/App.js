@@ -12,7 +12,12 @@ import Cart from "./pages/Cart";
 import SignUp from "./pages/auth/SignUp";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Review from "./pages/dashboard/Review";
+import Payment from "./pages/dashboard/Payment";
+import History from "./pages/dashboard/History";
+import ContactUs from "./pages/dashboard/ContactUs";
+import UserLayout from "./components/UserLayout";
 
 const App = () => {
   return (
@@ -70,7 +75,46 @@ const App = () => {
               </Layout>
             }
           />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/dashboard"
+            element={
+              <UserLayout>
+                <Dashboard />
+              </UserLayout>
+            }
+          />
+          <Route
+            path="/review"
+            element={
+              <UserLayout>
+                <Review />
+              </UserLayout>
+            }
+          />
+          <Route
+            path="/payment"
+            element={
+              <UserLayout>
+                <Payment />
+              </UserLayout>
+            }
+          />
+          <Route
+            path="/history"
+            element={
+              <UserLayout>
+                <History />
+              </UserLayout>
+            }
+          />
+          <Route
+            path="/contactus"
+            element={
+              <UserLayout>
+                <ContactUs />
+              </UserLayout>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
